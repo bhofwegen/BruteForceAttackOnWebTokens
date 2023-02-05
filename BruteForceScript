@@ -1,0 +1,20 @@
+;Python code :
+;
+import itertools 
+from pip._vendor import requests 
+ 
+# URL template with the startcode parameter 
+url_template = "https://YOUR_URL/matw44/processstart.asp?id=t10239&survey=t10239&startcode={}" 
+ 
+# Characters to use in the startcode parameter 
+characters = "abcdefghijklmnopqrstuvwxyz0123456789" 
+ 
+# Number of characters in the startcode parameter 
+code_length = 8 
+ 
+# Iterate through all possible startcode values 
+for code in itertools.product(characters, re-peat=code_length): 
+    startcode = "".join(code) 
+    url = url_template.format(startcode) 
+    response = requests.get(url) 
+    print(response.status_code, url)
